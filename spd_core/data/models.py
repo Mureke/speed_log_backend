@@ -1,11 +1,9 @@
-from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from spd_core import create_app
 from sqlalchemy.sql import func
-from flask_migrate import Migrate
 
-app = Flask(__name__)
-
-db = SQLAlchemy(app)
+# We didn't pass app instance here.
+db = SQLAlchemy()
 
 
 class SpeedLog(db.Model):
@@ -21,4 +19,3 @@ class SpeedLog(db.Model):
         self.ping = ping
         self.time = time
         self.created_at = created_at
-

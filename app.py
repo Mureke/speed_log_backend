@@ -1,12 +1,11 @@
-from flask import Flask
+from spd_core import create_app
 
-app = Flask(__name__)
-from . import create_app
 # To do: This place will change later
 config = {
-    "development": "config.Development"
+    "dev": "config.Development",
+    "prod": "config.Production"
 }
 
 if __name__ == "__main__":
-    app.config.from_object(config["development"])
+    app = create_app(config)
     app.run()
