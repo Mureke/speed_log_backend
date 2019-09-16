@@ -2,6 +2,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
+
 class BaseConfig(object):
     """ Base config class. This fields will use by production and development server """
     ORIGINS = ["*"] # for api calls
@@ -20,7 +21,7 @@ class Development(BaseConfig):
 # Currently we only have development config.
 # If you have production, you will need to pass it to here.
 config = {
-    'development': 'config.Development'
+    'development': 'speed_tst.config.Development'
 }
 
 
