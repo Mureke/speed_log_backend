@@ -1,5 +1,4 @@
 from flask_sqlalchemy import SQLAlchemy
-from spd_core import create_app
 from sqlalchemy.sql import func
 
 # We didn't pass app instance here.

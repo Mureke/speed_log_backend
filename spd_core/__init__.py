@@ -13,12 +13,10 @@ load_dotenv(dotenv_path)
 
 def create_app(environment):
     app = Flask(__name__)
-
     env = os.getenv("ENV")
 
     app.config.from_object(environment.get(env))
-
-    from spd_core.api.log.controllers import logs
+    from spd_core.api.log.controllers import log
 
     """ Cors settings will be here. We maybe use this endpoint later. """
     cors = CORS(app, resources={
@@ -28,7 +26,6 @@ def create_app(environment):
     })
 
     app.url_map.strict_slashes = False
-
-   # app.register_blueprint(logs, url_prefix='/api/logs')
+    app.register_blueprint(log, url_prefix='/api/logs')
 
     return app
