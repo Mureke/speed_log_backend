@@ -9,7 +9,7 @@ def get_logs():
 
     return jsonify({ "hello": "log" })
 
-@log.route('/<int:id>', methods=['GET'])
+@log.route('/<int:log_id>', methods=['GET'])
 def logs(log_id):
 
     return jsonify({ "id": log_id })

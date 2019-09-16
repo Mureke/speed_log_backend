@@ -27,5 +27,5 @@ def create_app(environment):
 
     app.url_map.strict_slashes = False
     app.register_blueprint(log, url_prefix='/api/logs')
-
+    print(app.debug)
     return app
