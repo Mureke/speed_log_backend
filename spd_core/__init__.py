@@ -16,7 +16,7 @@ def create_app(environment):
     env = os.getenv("ENV")
 
     app.config.from_object(environment.get(env))
-    from spd_core.api.log.controllers import log
+
 
     """ Cors settings will be here. We maybe use this endpoint later. """
     cors = CORS(app, resources={
@@ -25,7 +25,11 @@ def create_app(environment):
         }
     })
 
+    from spd_core.api.log.controllers import log
     app.url_map.strict_slashes = False
     app.register_blueprint(log, url_prefix='/api/logs')
-    print(app.debug)
+
+    from manage import commands
+    app.register_blueprint(commands, cli_group='commands')
+
     return app
