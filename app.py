@@ -1,5 +1,5 @@
 from spd_core import create_app
-from flask import Flask
+
 # To do: This place will change later
 config = {
     "dev": "config.Development",

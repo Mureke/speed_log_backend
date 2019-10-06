@@ -5,6 +5,8 @@ from flask_cors import CORS
 from dotenv import load_dotenv
 
 from config import BaseConfig
+from spd_core.data.models import db
+from flask_migrate import Migrate, MigrateCommand
 
 APP_ROOT = os.path.join(os.path.dirname(__file__))
 dotenv_path = os.path.join(APP_ROOT, '.env')
@@ -17,6 +19,8 @@ def create_app(environment):
 
     app.config.from_object(environment.get(env))
 
+    db.init_app(app)
+    migrate = Migrate(app, db)
 
     """ Cors settings will be here. We maybe use this endpoint later. """
     cors = CORS(app, resources={
