@@ -24,4 +24,6 @@ class Production(BaseConfig):
     TESTING = False
     ENV = 'production'
     APPNAME = "SpeedLoggerProd"
+    SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/test.db'
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
 
