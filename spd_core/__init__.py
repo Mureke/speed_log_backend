@@ -14,8 +14,9 @@ config = {
 }
 
 APP_ROOT = os.path.join(os.path.dirname(__file__))
-dotenv_path = os.path.join(APP_ROOT, '.env')
+dotenv_path = os.path.join(APP_ROOT, '../.env')
 load_dotenv(dotenv_path)
+print(dotenv_path)
 app = Flask(__name__)
 env = os.getenv("ENV")
 

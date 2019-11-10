@@ -1,3 +1,5 @@
+import os
+
 
 class BaseConfig(object):
     """ Base config class. This fields will use by production and development server """
@@ -12,7 +14,7 @@ class Development(BaseConfig):
     DEBUG = True
     TESTING = False
     ENV = 'dev'
-    APPNAME = "SpeedLoggerDev"
+    APPNAME = os.getenv('APPNAME', "SpeedLoggerDev")
     SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/test.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = True
 
