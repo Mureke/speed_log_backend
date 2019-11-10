@@ -10,8 +10,6 @@ commands = Blueprint('commands', __name__)
 @commands.cli.command('test')
 def init_db():
     print('Test command')
-    print(app.config.get('APPNAME'))
-    print(app.config.get('SQLALCHEMY_DATABASE_URI'))
 
 
 @commands.cli.command('speed-test')
