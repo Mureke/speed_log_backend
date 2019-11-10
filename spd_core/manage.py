@@ -37,7 +37,9 @@ Speed test results:
 
 @commands.cli.command('get-logs')
 def test_get_speed():
-    logs = db.session.query(SpeedLog)
-    log: SpeedLog
+    logs = db.session.query(SpeedLog).limit(3)
     for log in logs:
-        print(log.download)
+        print("Ping: " + str(log.ping))
+        print("down: " + str(log.download))
+        print("up: " + str(log.upload))
+
