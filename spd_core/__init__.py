@@ -2,21 +2,18 @@ import os
 
 from flask import Flask
 from flask_cors import CORS
-from dotenv import load_dotenv
 
 from config import BaseConfig
 from spd_core.data.models import db
 from flask_migrate import Migrate
+from dotenv import load_dotenv, find_dotenv
 
 config = {
     "dev": "config.Development",
     "prod": "config.Production"
 }
+load_dotenv(find_dotenv())
 
-APP_ROOT = os.path.join(os.path.dirname(__file__))
-dotenv_path = os.path.join(APP_ROOT, '../.env')
-load_dotenv(dotenv_path)
-print(dotenv_path)
 app = Flask(__name__)
 env = os.getenv("ENV")
 

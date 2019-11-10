@@ -1,5 +1,5 @@
 import speedtest
-from flask import Flask, Blueprint
+from flask import Blueprint
 from spd_core.data.models import SpeedLog
 from spd_core import db
 from spd_core import app
@@ -10,7 +10,7 @@ commands = Blueprint('commands', __name__)
 @commands.cli.command('test')
 def init_db():
     print('Test command')
-    print(app.config.get('APPNAME'))
+    print(app.config.get('PORT'))
     print(app.config.get('SQLALCHEMY_DATABASE_URI'))
 
 
