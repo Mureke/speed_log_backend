@@ -19,3 +19,14 @@ class SpeedLog(db.Model):
 
     def __str__(self):
         return '<Log: %r>' % self.id
+
+    @property
+    def serialize(self):
+        """Return object data in serializeable format"""
+        return {
+            'id': self.id,
+            'download': self.download,
+            'upload': self.upload,
+            'ping': self.ping,
+            'time': self.time,
+        }
