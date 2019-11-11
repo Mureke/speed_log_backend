@@ -6,6 +6,6 @@ All data fields will store in the **models.py** file.
 
 These are the current model classes;
 
-**User**
+**SoeedLog**
 
-This model will work for user operations.
+Speed test results
