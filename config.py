@@ -18,7 +18,7 @@ class Development(BaseConfig):
     DEBUG = os.environ.get('DEBUG', True)
     TESTING = os.environ.get('TESTING', False)
     APPNAME = os.environ.get('APPNAME', "SpeedLoggerDev")
-    SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI', 'sqlite:////tmp/test.db')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/test.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = os.environ.get('SQLALCHEMY_TRACK_MODIFICATIONS', True)
 
 

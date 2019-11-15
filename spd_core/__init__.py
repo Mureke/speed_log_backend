@@ -15,7 +15,7 @@ config = {
 load_dotenv(find_dotenv())
 
 app = Flask(__name__)
-env = os.getenv("ENV")
+env = os.getenv("ENV", os.environ.get('FLASK_ENV', 'dev'))
 
 app.config.from_object(config.get(env))
 

@@ -2,7 +2,7 @@ from flask import Blueprint, jsonify
 from flask import abort, request
 from sqlalchemy import func
 
-from spd_core import db
+from spd_core import db, app
 from spd_core.data.models import SpeedLog
 
 log = Blueprint('log', __name__)

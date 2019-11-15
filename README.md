@@ -5,6 +5,8 @@ This is a simple flask app for saving speed test results and returning them from
 `$ export FLASK_APP=app.py`
 
 `$ export FLASK_ENV=develop`
+
+`$ export ENV=dev`
  
 #### Dev server:
 
