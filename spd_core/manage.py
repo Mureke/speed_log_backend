@@ -3,6 +3,7 @@ from flask import Blueprint
 from spd_core.data.models import SpeedLog
 from spd_core import db
 from spd_core import app
+from spd_core.network_tools.network_tools import get_devices
 
 commands = Blueprint('commands', __name__)
 
@@ -17,6 +18,7 @@ def init_db():
 @commands.cli.command('speed-test')
 def test_speed():
     print('Starting speed test!')
+    print(get_devices())
     s = speedtest.Speedtest()
     s.get_servers()
     s.get_best_server()
