@@ -20,6 +20,7 @@ class Development(BaseConfig):
     APPNAME = os.environ.get('APPNAME', "SpeedLoggerDev")
     SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/test.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = os.environ.get('SQLALCHEMY_TRACK_MODIFICATIONS', True)
+    BLOCKING_DEVICES = os.environ.get('BLOCKING_DEVICES', 'Taru-MBP.home,Taru--iPhone.home,mureke.home').split(',')
 
 
 class Production(BaseConfig):
@@ -31,4 +32,5 @@ class Production(BaseConfig):
     APPNAME = os.environ.get('APPNAME', "SpeedLoggerProd")
     SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI', 'sqlite:////tmp/test.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = os.environ.get('SQLALCHEMY_TRACK_MODIFICATIONS', True)
+    BLOCKING_DEVICES = os.environ.get('BLOCKING_DEVICES', '').split(',')
 
