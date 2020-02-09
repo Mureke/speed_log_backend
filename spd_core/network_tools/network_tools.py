@@ -1,12 +1,12 @@
-import nmap
 import socket
+import nmap
 from netaddr import IPNetwork
+
 
 def check_if_scan_available(device_names_to_avoid=()):
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.connect(("8.8.8.8", 80))
     s = s.getsockname()[0]
-
     ip = str(IPNetwork(str(f'{s}/255.255.255.0')).cidr)
     nm = nmap.PortScanner()
     scan = nm.scan(ip, arguments="-sn")
