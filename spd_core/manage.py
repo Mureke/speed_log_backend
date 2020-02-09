@@ -18,7 +18,7 @@ def init_db():
 @commands.cli.command('speed-test')
 def test_speed():
     print('Starting speed test!')
-    if check_if_scan_available:
+    if check_if_scan_available(app.config.get('BLOCKING_DEVICES')):
         s = speedtest.Speedtest()
         s.get_servers()
         s.get_best_server()

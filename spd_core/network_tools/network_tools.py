@@ -13,7 +13,6 @@ def check_if_scan_available(device_names_to_avoid=()):
     for host in scan.get('scan'):
         device = scan['scan'][host]
         if len(device['hostnames']) > 0:
-            print(device['hostnames'][0]['name'])
             if device['hostnames'][0]['name'] in device_names_to_avoid:
                 return False
     return True
@@ -21,4 +20,3 @@ def check_if_scan_available(device_names_to_avoid=()):
 
 if __name__ == '__main__':
     allowed = check_if_scan_available()
-    print(allowed)
