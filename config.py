@@ -18,19 +18,19 @@ class Development(BaseConfig):
     DEBUG = os.environ.get('DEBUG', True)
     TESTING = os.environ.get('TESTING', False)
     APPNAME = os.environ.get('APPNAME', "SpeedLoggerDev")
-    SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/test.db'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://mureke:laatikko@localhost:9876/flask'
     SQLALCHEMY_TRACK_MODIFICATIONS = os.environ.get('SQLALCHEMY_TRACK_MODIFICATIONS', True)
-    BLOCKING_DEVICES = os.environ.get('BLOCKING_DEVICES', 'Taru-MBP.home,Taru--iPhone.home,mureke.home').split(',')
+    BLOCKING_DEVICES = os.environ.get('BLOCKING_DEVICES', '').split(',')
 
 
 class Production(BaseConfig):
     """ Production config. We use Debug mode false """
-    ENV='production'
+    ENV = 'production'
     PORT = os.environ.get('PORT', 8080)
     DEBUG = os.environ.get('DEBUG', False)
     TESTING = os.environ.get('TESTING', False)
     APPNAME = os.environ.get('APPNAME', "SpeedLoggerProd")
-    SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI', 'sqlite:////tmp/test.db')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI', 'postgresql://localhost/flask')
     SQLALCHEMY_TRACK_MODIFICATIONS = os.environ.get('SQLALCHEMY_TRACK_MODIFICATIONS', True)
     BLOCKING_DEVICES = os.environ.get('BLOCKING_DEVICES', '').split(',')
 
