@@ -18,7 +18,7 @@ class Development(BaseConfig):
     DEBUG = os.environ.get('DEBUG', True)
     TESTING = os.environ.get('TESTING', False)
     APPNAME = os.environ.get('APPNAME', "SpeedLoggerDev")
-    SQLALCHEMY_DATABASE_URI = 'postgresql://mureke:laatikko@localhost:9876/flask'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://user:password@localhost:9876/flask'
     SQLALCHEMY_TRACK_MODIFICATIONS = os.environ.get('SQLALCHEMY_TRACK_MODIFICATIONS', True)
     BLOCKING_DEVICES = os.environ.get('BLOCKING_DEVICES', '').split(',')
 
@@ -30,7 +30,7 @@ class Production(BaseConfig):
     DEBUG = os.environ.get('DEBUG', False)
     TESTING = os.environ.get('TESTING', False)
     APPNAME = os.environ.get('APPNAME', "SpeedLoggerProd")
-    SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI', 'postgresql://mureke:laatikko@0.0.0.0:9876/flask')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI', 'postgresql://user:password@0.0.0.0:9876/flask')
     SQLALCHEMY_TRACK_MODIFICATIONS = os.environ.get('SQLALCHEMY_TRACK_MODIFICATIONS', True)
     BLOCKING_DEVICES = os.environ.get('BLOCKING_DEVICES', '').split(',')
 
