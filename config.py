@@ -20,7 +20,7 @@ class Development(BaseConfig):
     APPNAME = os.environ.get('APPNAME', "SpeedLoggerDev")
     SQLALCHEMY_DATABASE_URI = 'postgresql://user:password@localhost:9876/flask'
     SQLALCHEMY_TRACK_MODIFICATIONS = os.environ.get('SQLALCHEMY_TRACK_MODIFICATIONS', True)
-    BLOCKING_DEVICES = os.environ.get('BLOCKING_DEVICES', '').split(',')
+    BLOCKING_DEVICES = os.environ.get('BLOCKING_DEVICES', 'Taru-MBP.home,Taru--iPhone.home,mureke.home').split(',')
 
 
 class Production(BaseConfig):
