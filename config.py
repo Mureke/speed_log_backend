@@ -26,11 +26,11 @@ class Development(BaseConfig):
 class Production(BaseConfig):
     """ Production config. We use Debug mode false """
     ENV = 'production'
-    PORT = os.environ.get('PORT', 8080)
+    PORT = os.environ.get('PORT', 5000)
     DEBUG = os.environ.get('DEBUG', False)
     TESTING = os.environ.get('TESTING', False)
     APPNAME = os.environ.get('APPNAME', "SpeedLoggerProd")
-    SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI', 'postgresql://user:password@0.0.0.0:9876/flask')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI', None)
     SQLALCHEMY_TRACK_MODIFICATIONS = os.environ.get('SQLALCHEMY_TRACK_MODIFICATIONS', True)
     BLOCKING_DEVICES = os.environ.get('BLOCKING_DEVICES', '').split(',')
 
